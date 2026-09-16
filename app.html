@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KITA! アプリ</title>
+<link rel="icon" href="icons/icon-192.png">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="kbody">
+<main>
+  <header class="top">
+    <div class="wordmark">KITA<span class="dot">!</span></div>
+    <a class="navlink" href="index.html">トップ</a>
+  </header>
+
+  <!-- リストビュー -->
+  <section id="listView">
+    <h1 class="title">相手を登録</h1>
+    <p class="sub">名前を入れて追加。それだけ。</p>
+    <form id="addForm" class="form">
+      <input id="nameInput" maxlength="40" placeholder="相手の名前（例: 彼）" autocomplete="off">
+      <button type="submit" class="btn">追加する</button>
+    </form>
+    <p id="msg" class="msg"></p>
+
+    <div id="names" class="names">
+      <div class="empty" id="empty">まだ誰も登録されていません。</div>
+    </div>
+
+    <section class="card" style="margin-top:26px">
+      <h2>LINEの設定はまだ？</h2>
+      <p class="small">トーク右上（≡）→ 通知 → 通知音を「アラーム」系に。これで届いたら大きな音が鳴ります。</p>
+      <a class="btn ghost" href="index.html">3タップ手順を見る</a>
+    </section>
+  </section>
+
+  <!-- 待機ビュー -->
+  <section id="standbyView" class="hidden">
+    <div class="panel">
+      <div class="row"><span class="dotpulse"></span><span class="muted">まもってます</span></div>
+      <div class="timer" id="timer">00:00:00</div>
+      <div class="name" id="watchName">「...」を、まもってます</div>
+    </div>
+    <p class="sub" style="margin-top:18px">
+      この画面を開いたまま、眠って。<br>届いたら、LINEが大きな音で起こすから。
+    </p>
+    <div class="form" style="justify-content:center; margin-top:8px">
+      <button id="testBtn" class="btn ghost">テストで音を確認</button>
+      <button id="backBtn" class="btn ghost">もどる</button>
+    </div>
+    <p class="small muted">※ 実際に鳴るのはLINEの通知音です。テストはKITA!の音。</p>
+  </section>
+
+</main>
+<script src="app.js"></script>
+</body>
+</html>
